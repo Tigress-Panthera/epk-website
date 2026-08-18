@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tigress Panthera — DJ | Book Now</title>
+<meta name="description" content="Tigress Panthera — Denver DJ. Fourteen years an elite bodyworker — DJing is bodywork by other means. Tension and release. Every set is a treatment. Book for clubs, festivals & events.">
+<meta property="og:title" content="Tigress Panthera — DJ">
+<meta property="og:description" content="Deep grooves. Real feeling. No boxes. Book Tigress Panthera for your next event.">
+<meta property="og:image" content="https://i1.sndcdn.com/avatars-KAXgxbMH0oVION6n-9qlD7w-t500x500.jpg">
+<style>
+  :root{
+    --bg:#0d0b10; --bg2:#16121c; --text:#f2eef7; --muted:#b7aec6;
+    --accent:#e8873c; --accent2:#c05aa8; --card:#1d1826;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:var(--accent)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(13,11,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid #2a2333}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:var(--serif);font-size:1.15rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);text-decoration:none}
+  .navlinks{display:flex;gap:22px}
+  .navlinks a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+  .navlinks a:hover{color:var(--text)}
+  .navlinks a.cta{color:var(--accent);font-weight:600}
+  @media(max-width:720px){.navlinks a:not(.cta){display:none}}
+
+  /* Hero */
+  header{position:relative;min-height:82vh;display:flex;align-items:flex-end;background:url('images/c79387742691.jpeg') center 30%/cover no-repeat}
+  header::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,rgba(13,11,16,.45) 45%,rgba(13,11,16,.15) 100%)}
+  .hero-inner{position:relative;z-index:1;padding:0 20px 70px;max-width:1000px;margin:0 auto;width:100%}
+  h1{font-family:var(--serif);font-size:clamp(2.6rem,7vw,4.5rem);letter-spacing:.06em;text-transform:uppercase;line-height:1.05}
+  .tagline{font-size:clamp(1.05rem,2.4vw,1.4rem);color:var(--text);margin-top:14px;font-style:italic}
+  .hero-ctas{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:600;letter-spacing:.05em;font-size:.95rem}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#141014}
+  .btn-primary:hover{filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--muted);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--text)}
+
+  section{padding:72px 0}
+  h2{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px}
+  h2 span{color:var(--accent)}
+
+  /* Bio */
+  .bio-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+  @media(max-width:760px){.bio-grid{grid-template-columns:1fr}}
+  .bio p{margin-bottom:16px;color:var(--text)}
+  .bio .pull{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--accent);margin:22px 0}
+  .facts{background:var(--card);border:1px solid #2a2333;border-radius:14px;padding:26px}
+  .facts h3{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .facts dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:.92rem}
+  .facts dt{color:var(--accent);font-weight:600;white-space:nowrap}
+  .facts dd{color:var(--text)}
+  .facts .note{margin-top:14px;font-size:.78rem;color:var(--muted)}
+
+  /* Shows */
+  .shows-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .show{background:var(--card);border:1px solid #2a2333;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+  .sh-date{color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .show strong{font-size:1rem;line-height:1.3}
+  .show em{color:var(--muted);font-style:normal;font-size:.85rem}
+  .archive{margin-top:28px;background:var(--card);border:1px solid #2a2333;border-radius:12px;padding:6px 20px}
+  .archive summary{cursor:pointer;padding:12px 0;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .archive ul{list-style:none;padding:4px 0 16px;display:flex;flex-direction:column;gap:8px}
+  .archive li{color:var(--muted);font-size:.9rem;border-left:2px solid #2a2333;padding-left:12px}
+  .archive li b{color:var(--accent);font-weight:600}
+
+  /* Music / video */
+  .videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:700px){.videos{grid-template-columns:1fr}}
+  .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--card)}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .sc-frame{border-radius:12px;overflow:hidden;margin-top:20px}
+
+  /* Slideshow */
+  .slideshow{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/3;max-height:640px}
+  .slides{display:flex;height:100%;transition:transform .5s ease}
+  .slide{min-width:100%;height:100%}
+  .slide img{width:100%;height:100%;object-fit:contain;background:#0a080d}
+  .ss-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,11,16,.55);border:0;color:#fff;font-size:1.6rem;width:46px;height:46px;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
+  .ss-btn:hover{background:rgba(13,11,16,.85)}
+  .ss-prev{left:12px}.ss-next{right:12px}
+  .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:2}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);border:0;cursor:pointer;padding:0}
+  .dot.active{background:var(--accent)}
+  .gallery-note{color:var(--muted);font-size:.85rem;margin-top:12px}
+
+  /* Logos */
+  .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  .logo-card{background:var(--card);border:1px solid #2a2333;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .logo-card.light{background:#efe9f5}
+  .logo-card img{max-height:120px;object-fit:contain}
+  .logo-card a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-weight:600}
+
+  /* Booking */
+  #booking{background:var(--bg2);text-align:center}
+  #booking p{max-width:560px;margin:0 auto 26px;color:var(--muted)}
+  .socials{margin-top:30px;display:flex;justify-content:center;gap:24px}
+  .socials a{color:var(--muted);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem}
+  .socials a:hover{color:var(--text)}
+  footer{padding:30px 0;text-align:center;color:#5f5570;font-size:.8rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Tigress Panthera</a>
+    <div class="navlinks">
+      <a href="#bio">Bio</a>
+      <a href="#shows">Shows</a>
+      <a href="#music">Music</a>
+      <a href="#photos">Photos</a>
+      <a href="#logos">Logos</a>
+      <a class="cta" href="#booking">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-inner">
+    <h1>Tigress Panthera</h1>
+    <p class="tagline">I don&rsquo;t play it safe. I play what&rsquo;s real.<br>DJing is bodywork by other means.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#booking">Book Tigress Panthera</a>
+      <a class="btn btn-ghost" href="https://soundcloud.com/tigresspanthera" target="_blank" rel="noopener">Listen on SoundCloud</a>
+    </div>
+  </div>
+</header>
+
+<section id="bio">
+  <div class="wrap">
+    <h2>The <span>Bio</span></h2>
+    <div class="bio-grid">
+      <div class="bio">
+        <p>Deep grooves. Real feeling. No boxes. Tigress Panthera moves through music instinctively &mdash; blending house, techno, and everything jazzy, hypnotic, and strange into emotionally charged, genre-defiant sets that read the room and then take it somewhere new.</p>
+        <p class="pull">&ldquo;Every set is a treatment.&rdquo;</p>
+        <p>DJing is bodywork by other means. She spent fourteen years as an elite bodyworker, and she still works bodies &mdash; the instrument changed, the craft didn&rsquo;t. It&rsquo;s all tension and release: she listens with every sense, lets intuition guide her hands, finds where the room is holding, and lets it go. The table taught her one body at a time. The dancefloor raised it to hundreds.</p>
+        <p>Raised on the Grateful Dead, long-form improvisation is her native language: no preplanned arc, just presence. Her sound is honest, untamed, and full of little surprises &mdash; less about perfection, more about presence; less about performance, more about permission. Every set invites you to come undone and reassemble as something truer.</p>
+        <p>A fixture of Denver&rsquo;s underground &mdash; DJ, curator, and promoter &mdash; she founded the Dawns Highway sunrise-afterhours series, handled all talent bookings for VXN Den, and has curated and played events at Denver&rsquo;s most iconic and in-demand venues &mdash; Mockingbird, Beacon, and Zodiac Haus &mdash; bringing prolific artists to the city for US debuts (Ignacio Morales) and Denver debuts (Alexi Delano) &mdash; and playing direct support at those debuts herself. Behind the decks, she opened New Year&rsquo;s Day 2025 in direct support of DJ Tennis, has played direct support for Magdalena, and has shared bills with Soul Clap, Alexi Delano, DJ Three, &Ouml;ona Dahl &amp; Matthew Dear, YokoO, Jay Tripwire, Ignacio Morales, CHKLTE, Sublee, Vampire Sex, and more &mdash; plus Insomniac&rsquo;s Day Trip rooftop festival alongside TOKiMONSTA and Danny Daze, a headline Boo! Ball at Beacon, the Day One festival main stage, and a takeover of Larimar in Santo Domingo. Her debut EP <em>Do Less</em> arrived in 2025, and this October she stars in Sweden&rsquo;s <em>Allt f&ouml;r Sverige</em> (season 14). You&rsquo;re not here to be palatable. You&rsquo;re here to be undeniable.</p>
+      </div>
+      <aside class="facts">
+        <h3>At a Glance &mdash; For Bookers</h3>
+        <dl>
+          <dt>Based in</dt><dd>Denver, CO &mdash; travels worldwide</dd>
+          <dt>Genres</dt><dd>House, techno &amp; electro-inspired deep grooves &mdash; jazzy, hypnotic, strange</dd>
+          <dt>Sets</dt><dd>Long-form improvised journeys &mdash; club sets to sunrise afterhours</dd>
+          <dt>Venues</dt><dd>Beacon, Mockingbird, Zodiac Hause, Temple, The Rooftop at Vinyl, Bar Standard/Milk Bar, 1134, La Diabla, NORAD, Georgie&rsquo;s, G&ouml;ldfinch, Casa Alta, VXN Den, Kulture Music Hall (Denver); DV8 &amp; Junkyard Social Club (Boulder); Larimar (Santo Domingo, DR)</dd>
+          <dt>Festivals</dt><dd>Day Trip on the Rooftop (Insomniac), Day One, Elevation Music Festival</dd>
+          <dt>Played with</dt><dd>DJ Tennis, TOKiMONSTA, Danny Daze, Magdalena, Soul Clap, Alexi Delano, DJ Three, &Ouml;ona Dahl &amp; Matthew Dear, YokoO, Jay Tripwire, Ignacio Morales, M.O.N.R.O.E., CHKLTE, Sublee, Mikey Lion, Eden Prince, Yubik, Vampire Sex, Bontan, jackLNDN, Max Mignot</dd>
+          <dt>Founder</dt><dd>Dawns Highway afterhours series; Impressions crew resident; Sound Decisions mix series</dd>
+          <dt>Curator</dt><dd>Curator, promoter &amp; talent buyer &mdash; all VXN Den bookings; events at Denver&rsquo;s most iconic venues (Mockingbird, Beacon, Zodiac Haus); booked US &amp; Denver debuts. Plays every event she produces</dd>
+          <dt>Releases</dt><dd><em>Do Less</em> EP (2025); <em>Allt f&ouml;r Sverige</em> S14 (Swedish TV, Oct 2026)</dd>
+          <dt>Booking</dt><dd><a href="#booking">Inquire below</a></dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="shows">
+  <div class="wrap">
+    <h2>Show <span>Highlights</span></h2>
+    <div class="shows-grid">
+      <div class="show"><span class="sh-date">Jan 1, 2025</span><strong>DJ Tennis &mdash; Direct Support</strong><em>New Year&rsquo;s Day &mdash; Zodiac Hause, Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2025</span><strong>TOKiMONSTA &amp; Danny Daze</strong><em>Day Trip on the Rooftop (Insomniac) &mdash; The Rooftop at Vinyl, Denver</em></div>
+      <div class="show"><span class="sh-date">Jan 2024</span><strong>Magdalena &mdash; Direct Support</strong><em>Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2023</span><strong>Soul Clap &mdash; Support</strong><em>1134, Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2025</span><strong>Alexi Delano (Sweden) &mdash; Direct Support</strong><em>Eat Your Heart Out &middot; Sound Decisions launch &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Jul 2023</span><strong>DJ Three &mdash; Direct Support</strong><em>Played, booked &amp; hosted &mdash; VXN Den, Denver</em></div>
+      <div class="show"><span class="sh-date">May 2023</span><strong>&Ouml;ona Dahl &amp; Matthew Dear &mdash; Direct Support</strong><em>Bar Standard &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2023</span><strong>YokoO &mdash; Support</strong><em>Loyalty is Royalty &mdash; 1134, Denver</em></div>
+      <div class="show"><span class="sh-date">Oct 2022</span><strong>Jay Tripwire (Canada) &mdash; Support</strong><em>Strange People &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2024</span><strong>Ignacio Morales (Spain) &mdash; Direct Support</strong><em>US Debut &mdash; Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Jun 2023</span><strong>M.O.N.R.O.E. &mdash; Direct Support</strong><em>STEAM &mdash; Bar Standard, Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2024</span><strong>CHKLTE &mdash; Support</strong><em>Surprise guest set &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2025</span><strong>Sublee (Romania) &mdash; Support</strong><em>_NRV (Nervous Records) x Hypnodose warehouse &mdash; EP release weekend</em></div>
+      <div class="show"><span class="sh-date">Played &amp; curated</span><strong>Mikey Lion (Desert Hearts) &mdash; Support</strong><em>Mockingbird, Denver</em></div>
+      <div class="show"><span class="sh-date">Sep 2022</span><strong>Eden Prince (UK) &mdash; Direct Support</strong><em>Temple &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>Yubik (Germany) &mdash; Direct Support</strong><em>US Debut &middot; After:Hours w/ Future Frequencies &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>Vampire Sex (Miami) &mdash; Direct Support</strong><em>Casa Alta / VXNDEN &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2023</span><strong>Bontan &mdash; Direct Support</strong><em>STEAM Thursdays &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>jackLNDN &ldquo;Evolutions&rdquo; Album Release</strong><em>Special guest &mdash; Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Sep 2024</span><strong>Max Mignot &mdash; Direct Support</strong><em>Georgie&rsquo;s &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Mar 2025</span><strong>Larimar Takeover</strong><em>Santo Domingo, Dominican Republic</em></div>
+      <div class="show"><span class="sh-date">Oct 2024</span><strong>The Boo! Ball &mdash; Headliner</strong><em>Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Jan 1, 2024</span><strong>Day One Festival &mdash; Main Stage</strong><em>NORAD Underground &mdash; Denver</em></div>
+    </div>
+    <details class="archive">
+      <summary>Full show archive</summary>
+      <ul>
+        <li><b>Dec 2025</b> &mdash; Den of Snakes &amp; Friends &mdash; all-night secret warehouse, Denver</li>
+        <li><b>May 2025</b> &mdash; You Up? &mdash; Quite Right, secret location, Denver</li>
+        <li><b>Feb 2025</b> &mdash; Mockingbird, Denver</li>
+        <li><b>Jun 2024</b> &mdash; Alexi Delano &mdash; Into the AM warehouse afterhours</li>
+        <li><b>Mar 2024</b> &mdash; STEAM (sold out) &mdash; Red Room &mdash; Bar Standard/Milk Bar</li>
+        <li><b>Feb 2024</b> &mdash; Denver Techno Sundays &mdash; La Diabla</li>
+        <li><b>Jan 2024</b> &mdash; The Abyss (Orca) &mdash; Beacon, Denver</li>
+        <li><b>Nov 2023</b> &mdash; Quite Right x JourneyDeep &mdash; deep house/progressive &mdash; Beacon, Denver</li>
+        <li><b>Oct 2023</b> &mdash; Alexi Delano &mdash; VXN Den &middot; Quite Right Obscurity Afters debut</li>
+        <li><b>Sep 2023</b> &mdash; Smash the Patriarchy II (Planned Parenthood benefit) &mdash; Junkyard Social Club, Boulder</li>
+        <li><b>Jul 2023</b> &mdash; Elevation Music Festival &mdash; late-night Hostel set, Colorado mountains</li>
+        <li><b>Jun 2023</b> &mdash; La Playa Pride &mdash; Kulture Music Hall, Denver</li>
+        <li><b>May 2023</b> &mdash; Sonik Ino party &mdash; Denver</li>
+        <li><b>2023</b> &mdash; Impressions residency &mdash; Dawns Highway &raquo; Into the AM: Lasers in the Jungle, Ressurection, Vacationland, Pride, ROSA, Winter Wrong</li>
+        <li><b>2023</b> &mdash; Coven Collective &mdash; Sorcery Sunday (Beacon), Saturday Night Afters, STEAM debut (Milk Bar), Rewilding (DV8, Boulder)</li>
+        <li><b>Aug&ndash;Sep 2022</b> &mdash; Denver House Music debuts &mdash; Temple &amp; Beacon</li>
+        <li><b>May 2022</b> &mdash; Dawns Highway founded &mdash; her own sunrise afterhours series</li>
+        <li><b>2022</b> &mdash; Scorpia, Easter &amp; BM Decompression (Beacon) &middot; Buckhorn Social Club &middot; The Comma &middot; Mile High Spirits</li>
+        <li>Plus Rogue Luv &amp; Cinco de Mayo at Beacon, G&ouml;ldfinch sessions, Sonido Sunday at La Diabla, Zodiac Hause &amp; 1134 takeovers, Afterhours Anonymous x NORAD, CU Boulder Art Museum, and more.</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section id="music">
+  <div class="wrap">
+    <h2>Watch &amp; <span>Listen</span></h2>
+    <div class="videos">
+      <div class="frame"><iframe src="https://www.youtube.com/embed/CxmaITGay5o?rel=0" title="Tigress Panthera live" allowfullscreen loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="https://www.youtube.com/embed/1TEfbLObYac?rel=0" title="Tigress Panthera live" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+    <div class="sc-frame">
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" loading="lazy" title="Tigress Panthera on SoundCloud"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/66718446&color=%23e8873c&auto_play=false&show_user=true&show_teaser=false"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="photos">
+  <div class="wrap">
+    <h2>Promo <span>Pics</span></h2>
+    <div class="slideshow" data-slideshow>
+      <div class="slides"></div>
+      <button class="ss-btn ss-prev" aria-label="Previous photo">&#10094;</button>
+      <button class="ss-btn ss-next" aria-label="Next photo">&#10095;</button>
+      <div class="dots"></div>
+    </div>
+
+    <h2 style="margin-top:64px">Press <span>Photos</span></h2>
+    <div class="slideshow" data-slideshow>
+      <div class="slides"></div>
+      <button class="ss-btn ss-prev" aria-label="Previous photo">&#10094;</button>
+      <button class="ss-btn ss-next" aria-label="Next photo">&#10095;</button>
+      <div class="dots"></div>
+    </div>
+    <p class="gallery-note">Press &amp; promo photos available for download &mdash; click any image to open full size.</p>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="wrap">
+    <h2>Logo <span>Images</span></h2>
+    <div class="logos">
+      <div class="logo-card light">
+        <img src="images/06cdeb815e0d.png" alt="Tigress Panthera logo — black">
+        <a href="images/06cdeb815e0d.png" target="_blank" rel="noopener">Download black</a>
+      </div>
+      <div class="logo-card">
+        <img src="images/8c3f91e4bc35.png" alt="Tigress Panthera logo — white">
+        <a href="images/8c3f91e4bc35.png" target="_blank" rel="noopener">Download white</a>
+      </div>
+      <div class="logo-card light">
+        <img src="images/fa3e2b077d49.png" alt="Tigress Panthera text logo — black">
+        <a href="images/fa3e2b077d49.png" target="_blank" rel="noopener">Download text black</a>
+      </div>
+      <div class="logo-card">
+        <img src="images/1686b95be633.png" alt="Tigress Panthera full logo — white">
+        <a href="images/1686b95be633.png" target="_blank" rel="noopener">Download full white</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="wrap">
+    <h2>Book <span>Tigress Panthera</span></h2>
+    <p>Booking for clubs, festivals, lounges, and private events. Tell me about your event &mdash; date, venue, vibe &mdash; and I&rsquo;ll get back to you.</p>
+    <a class="btn btn-primary" href="mailto:vitalkneadsco@gmail.com?subject=Booking%20Inquiry%20%E2%80%94%20Tigress%20Panthera">Send a Booking Inquiry</a>
+    <div class="socials">
+      <a href="https://instagram.com/tigress_panthera" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://soundcloud.com/tigresspanthera" target="_blank" rel="noopener">SoundCloud</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; <span id="yr"></span> Tigress Panthera. All rights reserved. Some images &copy; their photographers.</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const IMG = (hash, file) => `images/${hash.slice(0,12)}.${file.split('.').pop().toLowerCase()}`;
+const IMG_BIG = (hash, file) => `images/${hash.slice(0,12)}.${file.split('.').pop().toLowerCase()}`;
+
+const promoPhotos = [
+  IMG_BIG('8b160ec0a08c2cb8dfe9540439b21a3474cf99ed','305658156-175546605038728-7464221156026337866-n.jpeg'),
+  IMG('fadaa5cecc602b4b5f205c0bffb3d34161c59532','milly-passion.jpg'),
+  IMG('762ff266ecba1e172359fb711e65e92a206c1107','milly-boud.jpg'),
+  IMG('a513086a798f05d353649d260204087d8c7b8056','milly-flowers.jpg'),
+  IMG('438b6326995b17b5f640509be707108e4f581002','milly-red.jpg'),
+  IMG('ec1671c1d5555ee36ce889feb8e224e9399f76ef','milly-couch.jpg'),
+  IMG('33ebfe4cad310ce51f86ffe37ea2451e94efbb70','e0alzc7s.jpeg'),
+  IMG('d3234e7bde8825fbe07738140eff998978ca0aca','i-tqvksu.jpeg'),
+  IMG('f0803daecf95eb5079e17984db0b48c07013ba90','milly-wm2.jpeg'),
+  IMG('d92b21c9671b1df490ca3d2e3d061f25f284e6f3','nezbnyd4.jpeg')
+];
+
+const pressPhotos = [
+  IMG('79070c67f6707b38b052be70541c23426d5bd5ef','milly-barstandard.jpg'),
+  IMG('86f1dc5dd38b870408208a336c9a9e89a0cbd810','millytrippybday.jpg'),
+  IMG('4368151603c7a34c5880e6556ba2795a5eac6514','fo4a0330-enhanced-nr.jpg'),
+  IMG('4f2e5f80f7a111615173c4a25576412a18464e25','fo4a0718-enhanced-nr.jpg'),
+  IMG('04f97242963d090bbdda9d4b3ce674fe28fd7d1b','fo4a0683-enhanced-nr-edit.jpg'),
+  IMG('840f8dd3e81422f1dad57f2d68646eef46cec918','fo4a0906-enhanced-nr.jpg'),
+  IMG('969512c61a18e08b6a55827aa4f1b71bffe765bf','dsc05398-1.jpg'),
+  IMG('ce3e32aef728f34b1bcf1f041e028210a831b215','dsc02287.jpg'),
+  IMG('d58c7150f60453995adae44d6d907f01cd1b9c77','dsc05367-1.jpg'),
+  IMG('260e5a355dc256bdd5c09375ecfe42d38c17b111','dsc05385.jpg'),
+  IMG('ec1f7aa6d44844fcc413378c31f258b60e2fc614','beacon-jan-21-23-27.jpg'),
+  IMG('d893b014331dd37c20f4abc9596a3a8e03ba298b','txs3fliw.jpeg'),
+  IMG('c8508a100e0f8138d42c5140f59fe31ad14c42d2','millydj.jpg'),
+  IMG('8877933445d0e28f037a98874c57734795c6f9c1','millycloseup.jpg'),
+  IMG('bea1bf76fd3720f3d5117f390d5003911b0a87a2','millycrowd.jpg'),
+  IMG('4f5850603155a632f1e0de0d61e49063a3478ea9','millyglitz.jpg'),
+  IMG('fec4b8928e48def0d289af7364ecbad9e7f58a2c','beacon-jan-21-23-88-1.jpg'),
+  IMG('632d1727f759fb6cf903456ed810ac9ac6b8e33c','beacon-jan-21-23-96.jpg')
+];
+
+function buildSlideshow(root, photos){
+  const slidesEl = root.querySelector('.slides');
+  const dotsEl = root.querySelector('.dots');
+  photos.forEach((src,i)=>{
+    const s = document.createElement('div'); s.className='slide';
+    s.innerHTML = `<a href="${src}" target="_blank" rel="noopener"><img src="${src}" loading="lazy" alt="Tigress Panthera photo ${i+1}"></a>`;
+    slidesEl.appendChild(s);
+    const d = document.createElement('button'); d.className='dot'; d.setAttribute('aria-label','Photo '+(i+1));
+    d.addEventListener('click',()=>go(i,true));
+    dotsEl.appendChild(d);
+  });
+  let idx=0, timer;
+  const dots = dotsEl.querySelectorAll('.dot');
+  function go(i,user){
+    idx=(i+photos.length)%photos.length;
+    slidesEl.style.transform=`translateX(-${idx*100}%)`;
+    dots.forEach((d,j)=>d.classList.toggle('active',j===idx));
+    if(user) restart();
+  }
+  function restart(){clearInterval(timer);timer=setInterval(()=>go(idx+1),5000);}
+  root.querySelector('.ss-prev').addEventListener('click',()=>go(idx-1,true));
+  root.querySelector('.ss-next').addEventListener('click',()=>go(idx+1,true));
+  // touch swipe
+  let x0=null;
+  root.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  root.addEventListener('touchend',e=>{
+    if(x0===null)return;
+    const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40) go(idx+(dx<0?1:-1),true);
+    x0=null;
+  },{passive:true});
+  root.addEventListener('mouseenter',()=>clearInterval(timer));
+  root.addEventListener('mouseleave',restart);
+  go(0); restart();
+}
+
+const shows = document.querySelectorAll('[data-slideshow]');
+buildSlideshow(shows[0], promoPhotos);
+buildSlideshow(shows[1], pressPhotos);
+</script>
+</body>
+</html>
