@@ -58,8 +58,22 @@ Confirm with `curl -sI https://tigresspanthera.com/` if needed.
 - **Images:** prefer web-friendly sizes; always include `alt`; `loading="lazy"` for
   the slideshows. To add a photo: drop the file in `images/` and add its path (e.g.
   `'images/newpic.jpg'`) to the relevant `promoPhotos` / `pressPhotos` array.
-- **Booking** → `mailto:vitalkneadsco@gmail.com`. SoundCloud + Instagram links in the
-  hero and footer are external; keep as-is.
+- **Booking** → a real form in `#booking` that POSTs to **Web3Forms**
+  (`https://api.web3forms.com/submit`). Submissions land in
+  **tigresspantheramusic@gmail.com**; the destination is baked into the `access_key`
+  hidden input, not the HTML, so changing the inbox means generating a new key at
+  web3forms.com (logged in as that address), not editing this file. The dashboard's
+  "Website URL" setting must list `tigresspanthera.com` or submissions get rejected.
+  The form only works over http(s), not from a `file://` preview. Fallback `mailto:`
+  links to the same address appear in the error message and the socials row.
+  SoundCloud + Instagram links in the hero and footer are external; keep as-is.
+- **No em dashes.** Milly's house style: never use them in copy, anywhere. Use commas,
+  colons, periods, parentheses, or `&middot;` separators instead.
+- **YouTube:** `#music` uses click-to-play facades, not raw iframes (`.yt` divs with a
+  `data-yt` video ID, built by JS at the bottom of `index.html`). Raw iframes throw
+  "Error 153" in local `file://` previews because YouTube gets no referrer. The facade
+  shows a thumbnail, then swaps in the player on click when served over http(s), or
+  opens YouTube in a new tab when it isn't. To change a video, edit its `data-yt` ID.
 - **Do NOT touch:** the `CNAME` file, DNS, or anything outside this repo. Domain is at
   **Porkbun (~$11/yr)**; DNS = 4 apex A records to GitHub Pages + `www` CNAME; deploys
   from `main` / root with "Enforce HTTPS" on. DNSSEC is **off** — ignore DNSSEC prompts.

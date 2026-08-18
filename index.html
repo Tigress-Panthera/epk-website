@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tigress Panthera — DJ | Book Now</title>
-<meta name="description" content="Tigress Panthera — Denver DJ. Fourteen years an elite bodyworker — DJing is bodywork by other means. Tension and release. Every set is a treatment. Book for clubs, festivals & events.">
-<meta property="og:title" content="Tigress Panthera — DJ">
+<title>Tigress Panthera | DJ | Book Now</title>
+<meta name="description" content="Tigress Panthera, Denver DJ. Fourteen years an elite bodyworker; DJing is bodywork by other means. Tension and release. Every set is a treatment. Book for clubs, festivals &amp; events.">
+<meta property="og:title" content="Tigress Panthera | DJ">
 <meta property="og:description" content="Deep grooves. Real feeling. No boxes. Book Tigress Panthera for your next event.">
 <meta property="og:image" content="https://i1.sndcdn.com/avatars-KAXgxbMH0oVION6n-9qlD7w-t500x500.jpg">
 <style>
@@ -45,7 +45,7 @@
   .btn-ghost{border:1px solid var(--muted);color:var(--text)}
   .btn-ghost:hover{border-color:var(--text)}
 
-  section{padding:72px 0}
+  section{padding:72px 0;scroll-margin-top:60px}
   h2{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px}
   h2 span{color:var(--accent)}
 
@@ -79,6 +79,30 @@
   .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--card)}
   .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .sc-frame{border-radius:12px;overflow:hidden;margin-top:20px}
+  .yt{cursor:pointer}
+  .yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .yt .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to top,rgba(13,11,16,.75),rgba(13,11,16,.15));transition:background .25s}
+  .yt:hover .play{background:linear-gradient(to top,rgba(13,11,16,.6),rgba(13,11,16,.05))}
+  .yt .play svg{width:66px;height:66px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6))}
+  .yt .vt{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:.85rem;color:var(--text);z-index:1;pointer-events:none}
+  .video-note{color:var(--muted);font-size:.85rem;margin-top:14px;text-align:center}
+  .video-note a{color:var(--accent)}
+
+  /* Booking form */
+  .bookform{max-width:620px;margin:0 auto;text-align:left;display:grid;gap:14px}
+  .bookform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.bookform .row{grid-template-columns:1fr}}
+  .bookform label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .bookform input,.bookform select,.bookform textarea{
+    width:100%;background:var(--card);border:1px solid #2a2333;border-radius:10px;
+    padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:.95rem}
+  .bookform textarea{min-height:120px;resize:vertical}
+  .bookform input:focus,.bookform select:focus,.bookform textarea:focus{outline:none;border-color:var(--accent)}
+  .bookform button{border:0;cursor:pointer;font-family:var(--sans);width:100%;font-size:1rem}
+  .hp{position:absolute;left:-9999px;opacity:0}
+  .formmsg{margin-top:14px;font-size:.92rem;min-height:1.4em}
+  .formmsg.ok{color:#7ddca4}
+  .formmsg.err{color:#f08a8a}
 
   /* Slideshow */
   .slideshow{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/3;max-height:640px}
@@ -141,23 +165,23 @@
     <h2>The <span>Bio</span></h2>
     <div class="bio-grid">
       <div class="bio">
-        <p>Deep grooves. Real feeling. No boxes. Tigress Panthera moves through music instinctively &mdash; blending house, techno, and everything jazzy, hypnotic, and strange into emotionally charged, genre-defiant sets that read the room and then take it somewhere new.</p>
+        <p>Deep grooves. Real feeling. No boxes. Tigress Panthera moves through music instinctively, blending house, techno, and everything jazzy, hypnotic, and strange into emotionally charged, genre-defiant sets that read the room and then take it somewhere new.</p>
         <p class="pull">&ldquo;Every set is a treatment.&rdquo;</p>
-        <p>DJing is bodywork by other means. She spent fourteen years as an elite bodyworker, and she still works bodies &mdash; the instrument changed, the craft didn&rsquo;t. It&rsquo;s all tension and release: she listens with every sense, lets intuition guide her hands, finds where the room is holding, and lets it go. The table taught her one body at a time. The dancefloor raised it to hundreds.</p>
-        <p>Raised on the Grateful Dead, long-form improvisation is her native language: no preplanned arc, just presence. Her sound is honest, untamed, and full of little surprises &mdash; less about perfection, more about presence; less about performance, more about permission. Every set invites you to come undone and reassemble as something truer.</p>
-        <p>A fixture of Denver&rsquo;s underground &mdash; DJ, curator, and promoter &mdash; she founded the Dawns Highway sunrise-afterhours series, handled all talent bookings for VXN Den, and has curated and played events at Denver&rsquo;s most iconic and in-demand venues &mdash; Mockingbird, Beacon, and Zodiac Haus &mdash; bringing prolific artists to the city for US debuts (Ignacio Morales) and Denver debuts (Alexi Delano) &mdash; and playing direct support at those debuts herself. Behind the decks, she opened New Year&rsquo;s Day 2025 in direct support of DJ Tennis, has played direct support for Magdalena, and has shared bills with Soul Clap, Alexi Delano, DJ Three, &Ouml;ona Dahl &amp; Matthew Dear, YokoO, Jay Tripwire, Ignacio Morales, CHKLTE, Sublee, Vampire Sex, and more &mdash; plus Insomniac&rsquo;s Day Trip rooftop festival alongside TOKiMONSTA and Danny Daze, a headline Boo! Ball at Beacon, the Day One festival main stage, and a takeover of Larimar in Santo Domingo. Her debut EP <em>Do Less</em> arrived in 2025, and this October she stars in Sweden&rsquo;s <em>Allt f&ouml;r Sverige</em> (season 14). You&rsquo;re not here to be palatable. You&rsquo;re here to be undeniable.</p>
+        <p>DJing is bodywork by other means. She spent fourteen years as an elite bodyworker, and she still works bodies. The instrument changed, the craft didn&rsquo;t. It&rsquo;s all tension and release: she listens with every sense, lets intuition guide her hands, finds where the room is holding, and lets it go. The table taught her one body at a time. The dancefloor raised it to hundreds.</p>
+        <p>Brought up on the Grateful Dead, long-form improvisation is her native language: no preplanned arc, just presence. Her sound is honest, untamed, and full of little surprises: less about perfection, more about presence; less about performance, more about permission. Every set invites you to come undone and reassemble as something truer.</p>
+        <p>A fixture of Denver&rsquo;s underground as DJ, curator, and promoter, she founded the Dawns Highway sunrise-afterhours series, handled all talent bookings for VXN Den, and has curated and played events at Denver&rsquo;s most iconic and in-demand venues (Mockingbird, Beacon, and Zodiac Haus), bringing prolific artists to the city for US debuts (Ignacio Morales) and Denver debuts (Alexi Delano), and playing direct support at those debuts herself. Behind the decks, she opened New Year&rsquo;s Day 2025 in direct support of DJ Tennis, has played direct support for Magdalena, and has shared bills with Soul Clap, Alexi Delano, DJ Three, &Ouml;ona Dahl &amp; Matthew Dear, YokoO, Jay Tripwire, Ignacio Morales, CHKLTE, Sublee, Vampire Sex, and more, plus Insomniac&rsquo;s Day Trip rooftop festival alongside TOKiMONSTA and Danny Daze, a headline Boo! Ball at Beacon, the Day One festival main stage, and a takeover of Larimar in Santo Domingo. Her debut EP <em>Do Less</em> arrived in 2025, and this October she stars in Sweden&rsquo;s <em>Allt f&ouml;r Sverige</em> (season 14). You&rsquo;re not here to be palatable. You&rsquo;re here to be undeniable.</p>
       </div>
       <aside class="facts">
-        <h3>At a Glance &mdash; For Bookers</h3>
+        <h3>At a Glance: For Bookers</h3>
         <dl>
-          <dt>Based in</dt><dd>Denver, CO &mdash; travels worldwide</dd>
-          <dt>Genres</dt><dd>House, techno &amp; electro-inspired deep grooves &mdash; jazzy, hypnotic, strange</dd>
-          <dt>Sets</dt><dd>Long-form improvised journeys &mdash; club sets to sunrise afterhours</dd>
+          <dt>Based in</dt><dd>Denver, CO. Travels worldwide</dd>
+          <dt>Genres</dt><dd>House, techno &amp; electro-inspired deep grooves: jazzy, hypnotic, strange</dd>
+          <dt>Sets</dt><dd>Long-form improvised journeys, from club sets to sunrise afterhours</dd>
           <dt>Venues</dt><dd>Beacon, Mockingbird, Zodiac Hause, Temple, The Rooftop at Vinyl, Bar Standard/Milk Bar, 1134, La Diabla, NORAD, Georgie&rsquo;s, G&ouml;ldfinch, Casa Alta, VXN Den, Kulture Music Hall (Denver); DV8 &amp; Junkyard Social Club (Boulder); Larimar (Santo Domingo, DR)</dd>
           <dt>Festivals</dt><dd>Day Trip on the Rooftop (Insomniac), Day One, Elevation Music Festival</dd>
           <dt>Played with</dt><dd>DJ Tennis, TOKiMONSTA, Danny Daze, Magdalena, Soul Clap, Alexi Delano, DJ Three, &Ouml;ona Dahl &amp; Matthew Dear, YokoO, Jay Tripwire, Ignacio Morales, M.O.N.R.O.E., CHKLTE, Sublee, Mikey Lion, Eden Prince, Yubik, Vampire Sex, Bontan, jackLNDN, Max Mignot</dd>
           <dt>Founder</dt><dd>Dawns Highway afterhours series; Impressions crew resident; Sound Decisions mix series</dd>
-          <dt>Curator</dt><dd>Curator, promoter &amp; talent buyer &mdash; all VXN Den bookings; events at Denver&rsquo;s most iconic venues (Mockingbird, Beacon, Zodiac Haus); booked US &amp; Denver debuts. Plays every event she produces</dd>
+          <dt>Curator</dt><dd>Curator, promoter &amp; talent buyer: all VXN Den bookings; events at Denver&rsquo;s most iconic venues (Mockingbird, Beacon, Zodiac Haus); booked US &amp; Denver debuts. Plays every event she produces</dd>
           <dt>Releases</dt><dd><em>Do Less</em> EP (2025); <em>Allt f&ouml;r Sverige</em> S14 (Swedish TV, Oct 2026)</dd>
           <dt>Booking</dt><dd><a href="#booking">Inquire below</a></dd>
         </dl>
@@ -170,51 +194,51 @@
   <div class="wrap">
     <h2>Show <span>Highlights</span></h2>
     <div class="shows-grid">
-      <div class="show"><span class="sh-date">Jan 1, 2025</span><strong>DJ Tennis &mdash; Direct Support</strong><em>New Year&rsquo;s Day &mdash; Zodiac Hause, Denver</em></div>
-      <div class="show"><span class="sh-date">Aug 2025</span><strong>TOKiMONSTA &amp; Danny Daze</strong><em>Day Trip on the Rooftop (Insomniac) &mdash; The Rooftop at Vinyl, Denver</em></div>
-      <div class="show"><span class="sh-date">Jan 2024</span><strong>Magdalena &mdash; Direct Support</strong><em>Denver</em></div>
-      <div class="show"><span class="sh-date">Aug 2023</span><strong>Soul Clap &mdash; Support</strong><em>1134, Denver</em></div>
-      <div class="show"><span class="sh-date">Feb 2025</span><strong>Alexi Delano (Sweden) &mdash; Direct Support</strong><em>Eat Your Heart Out &middot; Sound Decisions launch &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Jul 2023</span><strong>DJ Three &mdash; Direct Support</strong><em>Played, booked &amp; hosted &mdash; VXN Den, Denver</em></div>
-      <div class="show"><span class="sh-date">May 2023</span><strong>&Ouml;ona Dahl &amp; Matthew Dear &mdash; Direct Support</strong><em>Bar Standard &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Nov 2023</span><strong>YokoO &mdash; Support</strong><em>Loyalty is Royalty &mdash; 1134, Denver</em></div>
-      <div class="show"><span class="sh-date">Oct 2022</span><strong>Jay Tripwire (Canada) &mdash; Support</strong><em>Strange People &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Nov 2024</span><strong>Ignacio Morales (Spain) &mdash; Direct Support</strong><em>US Debut &mdash; Beacon, Denver</em></div>
-      <div class="show"><span class="sh-date">Jun 2023</span><strong>M.O.N.R.O.E. &mdash; Direct Support</strong><em>STEAM &mdash; Bar Standard, Denver</em></div>
-      <div class="show"><span class="sh-date">Feb 2024</span><strong>CHKLTE &mdash; Support</strong><em>Surprise guest set &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Nov 2025</span><strong>Sublee (Romania) &mdash; Support</strong><em>_NRV (Nervous Records) x Hypnodose warehouse &mdash; EP release weekend</em></div>
-      <div class="show"><span class="sh-date">Played &amp; curated</span><strong>Mikey Lion (Desert Hearts) &mdash; Support</strong><em>Mockingbird, Denver</em></div>
-      <div class="show"><span class="sh-date">Sep 2022</span><strong>Eden Prince (UK) &mdash; Direct Support</strong><em>Temple &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Aug 2024</span><strong>Yubik (Germany) &mdash; Direct Support</strong><em>US Debut &middot; After:Hours w/ Future Frequencies &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Aug 2024</span><strong>Vampire Sex (Miami) &mdash; Direct Support</strong><em>Casa Alta / VXNDEN &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Feb 2023</span><strong>Bontan &mdash; Direct Support</strong><em>STEAM Thursdays &mdash; Denver</em></div>
-      <div class="show"><span class="sh-date">Aug 2024</span><strong>jackLNDN &ldquo;Evolutions&rdquo; Album Release</strong><em>Special guest &mdash; Beacon, Denver</em></div>
-      <div class="show"><span class="sh-date">Sep 2024</span><strong>Max Mignot &mdash; Direct Support</strong><em>Georgie&rsquo;s &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Jan 1, 2025</span><strong>DJ Tennis: Direct Support</strong><em>New Year&rsquo;s Day &middot; Zodiac Hause, Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2025</span><strong>TOKiMONSTA &amp; Danny Daze</strong><em>Day Trip on the Rooftop (Insomniac) &middot; The Rooftop at Vinyl, Denver</em></div>
+      <div class="show"><span class="sh-date">Jan 2024</span><strong>Magdalena: Direct Support</strong><em>Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2023</span><strong>Soul Clap: Support</strong><em>1134, Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2025</span><strong>Alexi Delano (Sweden): Direct Support</strong><em>Eat Your Heart Out &middot; Sound Decisions launch &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Jul 2023</span><strong>DJ Three: Direct Support</strong><em>Played, booked &amp; hosted &middot; VXN Den, Denver</em></div>
+      <div class="show"><span class="sh-date">May 2023</span><strong>&Ouml;ona Dahl &amp; Matthew Dear: Direct Support</strong><em>Bar Standard &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2023</span><strong>YokoO: Support</strong><em>Loyalty is Royalty &middot; 1134, Denver</em></div>
+      <div class="show"><span class="sh-date">Oct 2022</span><strong>Jay Tripwire (Canada): Support</strong><em>Strange People &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2024</span><strong>Ignacio Morales (Spain): Direct Support</strong><em>US Debut &middot; Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Jun 2023</span><strong>M.O.N.R.O.E.: Direct Support</strong><em>STEAM &middot; Bar Standard, Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2024</span><strong>CHKLTE: Support</strong><em>Surprise guest set &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Nov 2025</span><strong>Sublee (Romania): Support</strong><em>_NRV (Nervous Records) x Hypnodose warehouse &middot; EP release weekend</em></div>
+      <div class="show"><span class="sh-date">Played &amp; curated</span><strong>Mikey Lion (Desert Hearts): Support</strong><em>Mockingbird, Denver</em></div>
+      <div class="show"><span class="sh-date">Sep 2022</span><strong>Eden Prince (UK): Direct Support</strong><em>Temple &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>Yubik (Germany): Direct Support</strong><em>US Debut &middot; After:Hours w/ Future Frequencies &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>Vampire Sex (Miami): Direct Support</strong><em>Casa Alta / VXNDEN &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Feb 2023</span><strong>Bontan: Direct Support</strong><em>STEAM Thursdays &middot; Denver</em></div>
+      <div class="show"><span class="sh-date">Aug 2024</span><strong>jackLNDN &ldquo;Evolutions&rdquo; Album Release</strong><em>Special guest &middot; Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Sep 2024</span><strong>Max Mignot: Direct Support</strong><em>Georgie&rsquo;s &middot; Denver</em></div>
       <div class="show"><span class="sh-date">Mar 2025</span><strong>Larimar Takeover</strong><em>Santo Domingo, Dominican Republic</em></div>
-      <div class="show"><span class="sh-date">Oct 2024</span><strong>The Boo! Ball &mdash; Headliner</strong><em>Beacon, Denver</em></div>
-      <div class="show"><span class="sh-date">Jan 1, 2024</span><strong>Day One Festival &mdash; Main Stage</strong><em>NORAD Underground &mdash; Denver</em></div>
+      <div class="show"><span class="sh-date">Oct 2024</span><strong>The Boo! Ball: Headliner</strong><em>Beacon, Denver</em></div>
+      <div class="show"><span class="sh-date">Jan 1, 2024</span><strong>Day One Festival: Main Stage</strong><em>NORAD Underground &middot; Denver</em></div>
     </div>
     <details class="archive">
       <summary>Full show archive</summary>
       <ul>
-        <li><b>Dec 2025</b> &mdash; Den of Snakes &amp; Friends &mdash; all-night secret warehouse, Denver</li>
-        <li><b>May 2025</b> &mdash; You Up? &mdash; Quite Right, secret location, Denver</li>
-        <li><b>Feb 2025</b> &mdash; Mockingbird, Denver</li>
-        <li><b>Jun 2024</b> &mdash; Alexi Delano &mdash; Into the AM warehouse afterhours</li>
-        <li><b>Mar 2024</b> &mdash; STEAM (sold out) &mdash; Red Room &mdash; Bar Standard/Milk Bar</li>
-        <li><b>Feb 2024</b> &mdash; Denver Techno Sundays &mdash; La Diabla</li>
-        <li><b>Jan 2024</b> &mdash; The Abyss (Orca) &mdash; Beacon, Denver</li>
-        <li><b>Nov 2023</b> &mdash; Quite Right x JourneyDeep &mdash; deep house/progressive &mdash; Beacon, Denver</li>
-        <li><b>Oct 2023</b> &mdash; Alexi Delano &mdash; VXN Den &middot; Quite Right Obscurity Afters debut</li>
-        <li><b>Sep 2023</b> &mdash; Smash the Patriarchy II (Planned Parenthood benefit) &mdash; Junkyard Social Club, Boulder</li>
-        <li><b>Jul 2023</b> &mdash; Elevation Music Festival &mdash; late-night Hostel set, Colorado mountains</li>
-        <li><b>Jun 2023</b> &mdash; La Playa Pride &mdash; Kulture Music Hall, Denver</li>
-        <li><b>May 2023</b> &mdash; Sonik Ino party &mdash; Denver</li>
-        <li><b>2023</b> &mdash; Impressions residency &mdash; Dawns Highway &raquo; Into the AM: Lasers in the Jungle, Ressurection, Vacationland, Pride, ROSA, Winter Wrong</li>
-        <li><b>2023</b> &mdash; Coven Collective &mdash; Sorcery Sunday (Beacon), Saturday Night Afters, STEAM debut (Milk Bar), Rewilding (DV8, Boulder)</li>
-        <li><b>Aug&ndash;Sep 2022</b> &mdash; Denver House Music debuts &mdash; Temple &amp; Beacon</li>
-        <li><b>May 2022</b> &mdash; Dawns Highway founded &mdash; her own sunrise afterhours series</li>
-        <li><b>2022</b> &mdash; Scorpia, Easter &amp; BM Decompression (Beacon) &middot; Buckhorn Social Club &middot; The Comma &middot; Mile High Spirits</li>
+        <li><b>Dec 2025</b> &middot; Den of Snakes &amp; Friends &middot; all-night secret warehouse, Denver</li>
+        <li><b>May 2025</b> &middot; You Up? &middot; Quite Right, secret location, Denver</li>
+        <li><b>Feb 2025</b> &middot; Mockingbird, Denver</li>
+        <li><b>Jun 2024</b> &middot; Alexi Delano &middot; Into the AM warehouse afterhours</li>
+        <li><b>Mar 2024</b> &middot; STEAM (sold out) &middot; Red Room &middot; Bar Standard/Milk Bar</li>
+        <li><b>Feb 2024</b> &middot; Denver Techno Sundays &middot; La Diabla</li>
+        <li><b>Jan 2024</b> &middot; The Abyss (Orca) &middot; Beacon, Denver</li>
+        <li><b>Nov 2023</b> &middot; Quite Right x JourneyDeep &middot; deep house/progressive &middot; Beacon, Denver</li>
+        <li><b>Oct 2023</b> &middot; Alexi Delano &middot; VXN Den &middot; Quite Right Obscurity Afters debut</li>
+        <li><b>Sep 2023</b> &middot; Smash the Patriarchy II (Planned Parenthood benefit) &middot; Junkyard Social Club, Boulder</li>
+        <li><b>Jul 2023</b> &middot; Elevation Music Festival &middot; late-night Hostel set, Colorado mountains</li>
+        <li><b>Jun 2023</b> &middot; La Playa Pride &middot; Kulture Music Hall, Denver</li>
+        <li><b>May 2023</b> &middot; Sonik Ino party &middot; Denver</li>
+        <li><b>2023</b> &middot; Impressions residency &middot; Dawns Highway &raquo; Into the AM: Lasers in the Jungle, Ressurection, Vacationland, Pride, ROSA, Winter Wrong</li>
+        <li><b>2023</b> &middot; Coven Collective &middot; Sorcery Sunday (Beacon), Saturday Night Afters, STEAM debut (Milk Bar), Rewilding (DV8, Boulder)</li>
+        <li><b>Aug&ndash;Sep 2022</b> &middot; Denver House Music debuts &middot; Temple &amp; Beacon</li>
+        <li><b>May 2022</b> &middot; Dawns Highway founded &middot; her own sunrise afterhours series</li>
+        <li><b>2022</b> &middot; Scorpia, Easter &amp; BM Decompression (Beacon) &middot; Buckhorn Social Club &middot; The Comma &middot; Mile High Spirits</li>
         <li>Plus Rogue Luv &amp; Cinco de Mayo at Beacon, G&ouml;ldfinch sessions, Sonido Sunday at La Diabla, Zodiac Hause &amp; 1134 takeovers, Afterhours Anonymous x NORAD, CU Boulder Art Museum, and more.</li>
       </ul>
     </details>
@@ -225,8 +249,8 @@
   <div class="wrap">
     <h2>Watch &amp; <span>Listen</span></h2>
     <div class="videos">
-      <div class="frame"><iframe src="https://www.youtube.com/embed/CxmaITGay5o?rel=0" title="Tigress Panthera live" allowfullscreen loading="lazy"></iframe></div>
-      <div class="frame"><iframe src="https://www.youtube.com/embed/1TEfbLObYac?rel=0" title="Tigress Panthera live" allowfullscreen loading="lazy"></iframe></div>
+      <div class="frame yt" data-yt="CxmaITGay5o" data-title="Techno Set &middot; Live from the Livin&rsquo; Room"></div>
+      <div class="frame yt" data-yt="1TEfbLObYac" data-title="The Living Room Sessions"></div>
     </div>
     <div class="sc-frame">
       <iframe width="100%" height="300" scrolling="no" frameborder="no" loading="lazy" title="Tigress Panthera on SoundCloud"
@@ -252,7 +276,7 @@
       <button class="ss-btn ss-next" aria-label="Next photo">&#10095;</button>
       <div class="dots"></div>
     </div>
-    <p class="gallery-note">Press &amp; promo photos available for download &mdash; click any image to open full size.</p>
+    <p class="gallery-note">Press &amp; promo photos available for download. Click any image to open full size.</p>
   </div>
 </section>
 
@@ -261,19 +285,19 @@
     <h2>Logo <span>Images</span></h2>
     <div class="logos">
       <div class="logo-card light">
-        <img src="images/06cdeb815e0d.png" alt="Tigress Panthera logo — black">
+        <img src="images/06cdeb815e0d.png" alt="Tigress Panthera logo, black">
         <a href="images/06cdeb815e0d.png" target="_blank" rel="noopener">Download black</a>
       </div>
       <div class="logo-card">
-        <img src="images/8c3f91e4bc35.png" alt="Tigress Panthera logo — white">
+        <img src="images/8c3f91e4bc35.png" alt="Tigress Panthera logo, white">
         <a href="images/8c3f91e4bc35.png" target="_blank" rel="noopener">Download white</a>
       </div>
       <div class="logo-card light">
-        <img src="images/fa3e2b077d49.png" alt="Tigress Panthera text logo — black">
+        <img src="images/fa3e2b077d49.png" alt="Tigress Panthera text logo, black">
         <a href="images/fa3e2b077d49.png" target="_blank" rel="noopener">Download text black</a>
       </div>
       <div class="logo-card">
-        <img src="images/1686b95be633.png" alt="Tigress Panthera full logo — white">
+        <img src="images/1686b95be633.png" alt="Tigress Panthera full logo, white">
         <a href="images/1686b95be633.png" target="_blank" rel="noopener">Download full white</a>
       </div>
     </div>
@@ -283,11 +307,78 @@
 <section id="booking">
   <div class="wrap">
     <h2>Book <span>Tigress Panthera</span></h2>
-    <p>Booking for clubs, festivals, lounges, and private events. Tell me about your event &mdash; date, venue, vibe &mdash; and I&rsquo;ll get back to you.</p>
-    <a class="btn btn-primary" href="mailto:vitalkneadsco@gmail.com?subject=Booking%20Inquiry%20%E2%80%94%20Tigress%20Panthera">Send a Booking Inquiry</a>
+    <p>Booking for clubs, festivals, lounges, and private events. Tell me about your event (date, venue, vibe) and I&rsquo;ll get back to you.</p>
+    <form class="bookform" id="bookform" action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms access key. Routes submissions to tigresspantheramusic@gmail.com.
+           Manage at https://web3forms.com (logged in as that address). -->
+      <input type="hidden" name="access_key" value="142faf34-c65e-459c-b60a-45425947b4ec">
+      <input type="hidden" name="subject" value="New booking inquiry via tigresspanthera.com">
+      <input type="hidden" name="from_name" value="Tigress Panthera Website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="row">
+        <div>
+          <label for="bf-name">Your name</label>
+          <input id="bf-name" name="name" type="text" required placeholder="Jane Doe">
+        </div>
+        <div>
+          <label for="bf-email">Email</label>
+          <input id="bf-email" name="email" type="email" required placeholder="you@venue.com">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="bf-org">Venue / promoter / brand</label>
+          <input id="bf-org" name="organization" type="text" placeholder="Club, festival, or company">
+        </div>
+        <div>
+          <label for="bf-date">Event date</label>
+          <input id="bf-date" name="event_date" type="date">
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="bf-city">City</label>
+          <input id="bf-city" name="city" type="text" placeholder="Denver, CO">
+        </div>
+        <div>
+          <label for="bf-type">Event type</label>
+          <select id="bf-type" name="event_type">
+            <option>Club night</option>
+            <option>Festival</option>
+            <option>Lounge / bar</option>
+            <option>Afterhours</option>
+            <option>Private event</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="bf-length">Set length</label>
+          <input id="bf-length" name="set_length" type="text" placeholder="e.g. 2 hours">
+        </div>
+        <div>
+          <label for="bf-budget">Budget range</label>
+          <input id="bf-budget" name="budget" type="text" placeholder="Optional">
+        </div>
+      </div>
+
+      <div>
+        <label for="bf-msg">Tell me about the event</label>
+        <textarea id="bf-msg" name="message" required placeholder="Vibe, lineup, capacity, set time, anything else I should know."></textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Send Booking Inquiry</button>
+      <p class="formmsg" id="formmsg" role="status" aria-live="polite"></p>
+    </form>
     <div class="socials">
       <a href="https://instagram.com/tigress_panthera" target="_blank" rel="noopener">Instagram</a>
       <a href="https://soundcloud.com/tigresspanthera" target="_blank" rel="noopener">SoundCloud</a>
+      <a href="mailto:tigresspantheramusic@gmail.com">Email</a>
     </div>
   </div>
 </section>
@@ -373,6 +464,81 @@ function buildSlideshow(root, photos){
 const shows = document.querySelectorAll('[data-slideshow]');
 buildSlideshow(shows[0], promoPhotos);
 buildSlideshow(shows[1], pressPhotos);
+
+/* ---------- YouTube: click-to-play facade ----------
+   Raw iframes throw "Error 153" when the page is opened straight off the
+   hard drive (file://) because YouTube gets no referrer. Facade loads a
+   thumbnail instead, then swaps in the player on click when the site is
+   served over http(s), or opens YouTube in a new tab when it isn't. */
+const isFileProtocol = location.protocol === 'file:';
+document.querySelectorAll('.yt').forEach(box => {
+  const id = box.dataset.yt;
+  const title = box.dataset.title || 'Tigress Panthera live';
+  box.innerHTML =
+    '<img src="https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg" alt="" loading="lazy" ' +
+      'onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg\'">' +
+    '<div class="play" aria-hidden="true"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></div>' +
+    '<div class="vt">' + title + '</div>';
+  box.setAttribute('role', 'button');
+  box.setAttribute('tabindex', '0');
+  box.setAttribute('aria-label', 'Play: ' + title.replace(/&[a-z]+;/g, ' '));
+  const activate = () => {
+    if (isFileProtocol) {
+      window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener');
+      return;
+    }
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+      '?rel=0&autoplay=1" title="' + title +
+      '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  };
+  box.addEventListener('click', activate);
+  box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+});
+
+/* ---------- Booking form ---------- */
+const bookform = document.getElementById('bookform');
+const formmsg = document.getElementById('formmsg');
+if (bookform) {
+  bookform.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = bookform.querySelector('button[type=submit]');
+    const key = bookform.querySelector('[name=access_key]').value;
+
+    if (!key || key.indexOf('YOUR-') === 0) {
+      formmsg.className = 'formmsg err';
+      formmsg.textContent = 'Form not configured yet. Add your Web3Forms access key to index.html.';
+      return;
+    }
+
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = 'Sending...';
+    formmsg.className = 'formmsg';
+    formmsg.textContent = '';
+
+    try {
+      const res = await fetch(bookform.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(bookform)
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        bookform.reset();
+        formmsg.className = 'formmsg ok';
+        formmsg.textContent = 'Got it. Your inquiry is on its way, I’ll be in touch soon.';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      formmsg.className = 'formmsg err';
+      formmsg.innerHTML = 'Something went wrong. Please email <a href="mailto:tigresspantheramusic@gmail.com">tigresspantheramusic@gmail.com</a> directly.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+  });
+}
 </script>
 </body>
 </html>
