@@ -17,7 +17,10 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6}
+  /* Guard rail: nothing should ever be pannable sideways. `clip` rather than
+     `hidden` on purpose, since overflow-x:hidden would turn body into a scroll
+     container and break the sticky nav. */
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:clip}
   img{max-width:100%;display:block}
   a{color:var(--accent)}
   .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
@@ -99,7 +102,13 @@
   .bookform textarea{min-height:120px;resize:vertical}
   .bookform input:focus,.bookform select:focus,.bookform textarea:focus{outline:none;border-color:var(--accent)}
   .bookform button{border:0;cursor:pointer;font-family:var(--sans);width:100%;font-size:1rem}
-  .hp{position:absolute;left:-9999px;opacity:0}
+  /* Honeypot. Must stay in the DOM and submittable so bots fill it, but it used to
+     hide via left:-9999px, which parks a full viewport-width box off the left edge
+     of the page and makes the whole document horizontally pannable on iOS. Clip it
+     to a 1px box instead. Scoped to #booking to beat `.bookform input{width:100%}`. */
+  #booking .hp{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;
+    overflow:hidden;clip-path:inset(50%);white-space:nowrap;opacity:0}
   /* Scoped with #booking so these beat the `#booking p` rule below, which would
      otherwise force the message to muted grey and cap it at 560px. */
   #booking .formmsg{margin:0;font-size:.92rem;min-height:1.4em;max-width:none;scroll-margin:110px}
@@ -109,6 +118,30 @@
   #booking .formmsg.ok{color:#7ddca4;background:rgba(125,220,164,.09);border-color:rgba(125,220,164,.45)}
   #booking .formmsg.err{color:#f08a8a;background:rgba(240,138,138,.09);border-color:rgba(240,138,138,.45)}
   #booking .formmsg.err a{color:#f08a8a}
+
+  /* The `hidden` attribute has to beat .bookform's display:grid, hence #booking. */
+  #booking [hidden]{display:none}
+
+  /* Confirmation panel that takes the form's place after a successful send */
+  #booking .bookdone{
+    max-width:620px;margin:0 auto;background:var(--card);
+    border:1px solid rgba(125,220,164,.4);border-radius:16px;
+    padding:48px 32px;scroll-margin:110px}
+  #booking .bookdone:focus{outline:none}
+  #booking .bookdone .check{
+    width:66px;height:66px;margin:0 auto 24px;border-radius:50%;
+    background:rgba(125,220,164,.12);border:1px solid rgba(125,220,164,.5);
+    color:#7ddca4;font-size:2rem;line-height:64px;text-align:center}
+  #booking .bookdone h3{
+    font-family:var(--serif);font-size:1.9rem;font-weight:400;
+    letter-spacing:.02em;color:var(--text);margin:0 0 14px}
+  #booking .bookdone p{
+    max-width:430px;margin:0 auto;color:var(--muted);font-size:.98rem;line-height:1.65}
+  #booking .bookdone .again{
+    margin-top:28px;background:none;border:1px solid #3a3145;color:var(--muted);
+    border-radius:999px;padding:11px 26px;cursor:pointer;font-family:var(--sans);
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+  #booking .bookdone .again:hover{color:var(--text);border-color:var(--accent)}
 
   /* Slideshow */
   .slideshow{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/3;max-height:640px}
@@ -313,7 +346,7 @@
 <section id="booking">
   <div class="wrap">
     <h2>Book <span>Tigress Panthera</span></h2>
-    <p>Booking for clubs, festivals, lounges, and private events. Tell me about your event (date, venue, vibe) and I&rsquo;ll get back to you.</p>
+    <p id="bookintro">Booking for clubs, festivals, lounges, and private events. Tell me about your event (date, venue, vibe) and I&rsquo;ll get back to you.</p>
     <form class="bookform" id="bookform" action="https://api.web3forms.com/submit" method="POST">
       <!-- Web3Forms access key. Routes submissions to tigresspantheramusic@gmail.com.
            Manage at https://web3forms.com (logged in as that address). -->
@@ -381,6 +414,15 @@
       <button class="btn btn-primary" type="submit">Send Booking Inquiry</button>
       <p class="formmsg" id="formmsg" role="status" aria-live="polite"></p>
     </form>
+
+    <!-- Replaces the form on a successful send. Hidden until then. -->
+    <div class="bookdone" id="bookdone" role="status" aria-live="polite" hidden>
+      <div class="check" aria-hidden="true">&#10003;</div>
+      <h3>Inquiry sent</h3>
+      <p>Got it. Your booking inquiry is on its way and I&rsquo;ll be in touch soon. Keep an eye on your inbox, and check spam just in case.</p>
+      <button class="again" type="button" id="bookagain">Send another inquiry</button>
+    </div>
+
     <div class="socials">
       <a href="https://instagram.com/tigress_panthera" target="_blank" rel="noopener">Instagram</a>
       <a href="https://soundcloud.com/tigresspanthera" target="_blank" rel="noopener">SoundCloud</a>
@@ -505,18 +547,42 @@ document.querySelectorAll('.yt').forEach(box => {
 const bookform = document.getElementById('bookform');
 const formmsg = document.getElementById('formmsg');
 
-// The result message sits just below a full-width submit button, so on most
-// screens it lands below the fold at the moment of clicking and nobody sees it.
-// Scroll it into view and move focus there so it is announced to screen readers.
-function showFormMsg() {
+const bookintro = document.getElementById('bookintro');
+const bookdone = document.getElementById('bookdone');
+const bookagain = document.getElementById('bookagain');
+
+// Anything that appears after a submit lands below a full-width button, which on
+// most screens is below the fold at the moment of clicking. Scroll it into view
+// and move focus to it so it is announced to screen readers too.
+function reveal(el) {
   try {
-    formmsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    formmsg.setAttribute('tabindex', '-1');
-    formmsg.focus({ preventScroll: true });
+    el.setAttribute('tabindex', '-1');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.focus({ preventScroll: true });
   } catch (e) {
-    formmsg.scrollIntoView();
+    el.scrollIntoView();
   }
 }
+
+// On success the form is replaced by the confirmation panel, so the result is
+// impossible to miss. "Send another inquiry" puts the empty form back.
+function showBookDone() {
+  formmsg.className = 'formmsg';
+  formmsg.textContent = '';
+  if (bookintro) bookintro.hidden = true;
+  bookform.hidden = true;
+  bookdone.hidden = false;
+  reveal(bookdone);
+}
+
+function showBookForm() {
+  bookdone.hidden = true;
+  bookform.hidden = false;
+  if (bookintro) bookintro.hidden = false;
+  reveal(bookform);
+}
+
+if (bookagain) bookagain.addEventListener('click', showBookForm);
 
 if (bookform) {
   bookform.addEventListener('submit', async e => {
@@ -545,16 +611,14 @@ if (bookform) {
       const data = await res.json();
       if (res.ok && data.success) {
         bookform.reset();
-        formmsg.className = 'formmsg ok';
-        formmsg.textContent = 'Got it. Your inquiry is on its way, I’ll be in touch soon.';
-        showFormMsg();
+        showBookDone();
       } else {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (err) {
       formmsg.className = 'formmsg err';
       formmsg.innerHTML = 'Something went wrong. Please email <a href="mailto:tigresspantheramusic@gmail.com">tigresspantheramusic@gmail.com</a> directly.';
-      showFormMsg();
+      reveal(formmsg);
     } finally {
       btn.disabled = false;
       btn.textContent = original;

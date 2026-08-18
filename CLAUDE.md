@@ -79,11 +79,24 @@ Confirm with `curl -sI https://tigresspanthera.com/` if needed.
   The form only works over http(s), not from a `file://` preview. Fallback `mailto:`
   links to the same address appear in the error message and the socials row.
   SoundCloud + Instagram links in the hero and footer are external; keep as-is.
-  **Result message:** the success/error `<p class="formmsg">` sits below a full-width
-  submit button, so it lands below the fold on most screens. `showFormMsg()` scrolls it
-  into view and moves focus to it. Its CSS is scoped `#booking .formmsg` on purpose:
-  the plain `.formmsg` selectors lost to `#booking p` on specificity, which silently
-  rendered the green success text in muted grey. Keep the `#booking` prefix.
+  **Result states:** on success `showBookDone()` hides the intro paragraph and the form
+  and shows `#bookdone`, a confirmation panel in their place; its "Send another inquiry"
+  button calls `showBookForm()` to put the empty form back. Errors still render inline in
+  `<p class="formmsg">`. Both call `reveal()`, which scrolls the element into view and
+  moves focus to it, because anything below that full-width submit button lands below the
+  fold at the moment of clicking. Two CSS gotchas, both deliberate: the booking rules are
+  scoped `#booking ...` because plain `.formmsg` selectors lost to `#booking p` on
+  specificity (which silently rendered the green success text in muted grey), and
+  `#booking [hidden]{display:none}` exists because the UA `[hidden]` rule loses to
+  `.bookform{display:grid}`, so without it hiding the form does nothing. Keep both.
+- **No sideways scroll.** `body` has `overflow-x:clip` as a guard rail. Use `clip`, not
+  `hidden`: `hidden` would make body a scroll container and break the sticky nav. The
+  original offender was the booking honeypot, hidden with `left:-9999px`, which parks a
+  viewport-width box off the left edge and let iOS pan the whole page sideways, fighting
+  vertical scroll. It is now clipped to 1px (`#booking .hp`). If you ever hide something,
+  do not use the `left:-9999px` trick. To check for regressions, load the page in a
+  430px-wide iframe and compare `documentElement.scrollWidth` to `clientWidth`, and look
+  for elements whose rect falls outside the viewport without an `overflow` ancestor.
 - **No em dashes.** Milly's house style: never use them in copy, anywhere. Use commas,
   colons, periods, parentheses, or `&middot;` separators instead.
 - **YouTube:** `#music` uses click-to-play facades, not raw iframes (`.yt` divs with a
