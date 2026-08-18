@@ -100,9 +100,15 @@
   .bookform input:focus,.bookform select:focus,.bookform textarea:focus{outline:none;border-color:var(--accent)}
   .bookform button{border:0;cursor:pointer;font-family:var(--sans);width:100%;font-size:1rem}
   .hp{position:absolute;left:-9999px;opacity:0}
-  .formmsg{margin-top:14px;font-size:.92rem;min-height:1.4em}
-  .formmsg.ok{color:#7ddca4}
-  .formmsg.err{color:#f08a8a}
+  /* Scoped with #booking so these beat the `#booking p` rule below, which would
+     otherwise force the message to muted grey and cap it at 560px. */
+  #booking .formmsg{margin:0;font-size:.92rem;min-height:1.4em;max-width:none;scroll-margin:110px}
+  #booking .formmsg:focus{outline:none}
+  #booking .formmsg.ok,#booking .formmsg.err{
+    padding:16px 18px;border-radius:12px;border:1px solid;font-size:1rem;line-height:1.5}
+  #booking .formmsg.ok{color:#7ddca4;background:rgba(125,220,164,.09);border-color:rgba(125,220,164,.45)}
+  #booking .formmsg.err{color:#f08a8a;background:rgba(240,138,138,.09);border-color:rgba(240,138,138,.45)}
+  #booking .formmsg.err a{color:#f08a8a}
 
   /* Slideshow */
   .slideshow{position:relative;border-radius:14px;overflow:hidden;background:var(--card);aspect-ratio:4/3;max-height:640px}
@@ -498,6 +504,20 @@ document.querySelectorAll('.yt').forEach(box => {
 /* ---------- Booking form ---------- */
 const bookform = document.getElementById('bookform');
 const formmsg = document.getElementById('formmsg');
+
+// The result message sits just below a full-width submit button, so on most
+// screens it lands below the fold at the moment of clicking and nobody sees it.
+// Scroll it into view and move focus there so it is announced to screen readers.
+function showFormMsg() {
+  try {
+    formmsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    formmsg.setAttribute('tabindex', '-1');
+    formmsg.focus({ preventScroll: true });
+  } catch (e) {
+    formmsg.scrollIntoView();
+  }
+}
+
 if (bookform) {
   bookform.addEventListener('submit', async e => {
     e.preventDefault();
@@ -527,12 +547,14 @@ if (bookform) {
         bookform.reset();
         formmsg.className = 'formmsg ok';
         formmsg.textContent = 'Got it. Your inquiry is on its way, I’ll be in touch soon.';
+        showFormMsg();
       } else {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (err) {
       formmsg.className = 'formmsg err';
       formmsg.innerHTML = 'Something went wrong. Please email <a href="mailto:tigresspantheramusic@gmail.com">tigresspantheramusic@gmail.com</a> directly.';
+      showFormMsg();
     } finally {
       btn.disabled = false;
       btn.textContent = original;

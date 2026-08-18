@@ -23,11 +23,20 @@ in Notion: "Web Architecture — Vital Kneads & Tigress Panthera."
 
 ## Preview locally
 ```
-python3 -m http.server 8080
+python3 -m http.server 8081
 ```
-Then open http://localhost:8080 . Images are relative, so previewing from the repo
+Then open http://localhost:8081 . Images are relative, so previewing from the repo
 root shows everything. (Slideshow photos are `loading="lazy"` — they only load once
 scrolled into view; that's not a bug.)
+
+**Port convention:** Tigress Panthera uses **8081**; Vital Kneads uses 8080. Both
+sites are often served at the same time, so keep them apart. `OSError: [Errno 48]
+Address already in use` means something is already on that port; pick a free one or
+stop the other server with Ctrl+C in its Terminal window.
+
+Always preview over `http://localhost`, never by double-clicking `index.html`. A
+`file://` page breaks both the YouTube players and the booking form, because browsers
+block cross-site requests from local files. That is not a bug in the site.
 
 ## Deploy
 ```
@@ -63,10 +72,18 @@ Confirm with `curl -sI https://tigresspanthera.com/` if needed.
   **tigresspantheramusic@gmail.com**; the destination is baked into the `access_key`
   hidden input, not the HTML, so changing the inbox means generating a new key at
   web3forms.com (logged in as that address), not editing this file. The dashboard's
-  "Website URL" setting must list `tigresspanthera.com` or submissions get rejected.
+  "Website URL" is set to `https://tigresspanthera.com`. It is a label only: origin
+  enforcement is the "Restrict to Domains" setting, which is Pro-only and **off**, so
+  on the free plan submissions are accepted from any origin, localhost included.
+  Verified working end to end on 2026-08-18 (test inquiry delivered).
   The form only works over http(s), not from a `file://` preview. Fallback `mailto:`
   links to the same address appear in the error message and the socials row.
   SoundCloud + Instagram links in the hero and footer are external; keep as-is.
+  **Result message:** the success/error `<p class="formmsg">` sits below a full-width
+  submit button, so it lands below the fold on most screens. `showFormMsg()` scrolls it
+  into view and moves focus to it. Its CSS is scoped `#booking .formmsg` on purpose:
+  the plain `.formmsg` selectors lost to `#booking p` on specificity, which silently
+  rendered the green success text in muted grey. Keep the `#booking` prefix.
 - **No em dashes.** Milly's house style: never use them in copy, anywhere. Use commas,
   colons, periods, parentheses, or `&middot;` separators instead.
 - **YouTube:** `#music` uses click-to-play facades, not raw iframes (`.yt` divs with a
